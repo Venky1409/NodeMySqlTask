@@ -1,0 +1,26 @@
+{
+  "name": "nodeapitest",
+  "version": "1.0.0",
+  "description": "node api test",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "NODE_ENV=test mocha test/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "async": "^2.6.1",
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "should": "^13.2.3",
+    "supertest": "^3.3.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "mysql": "^2.16.0"
+  }
+}
