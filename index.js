@@ -16,14 +16,40 @@ var con = mysql.createConnection({
 
 con.connect(function (err) {
     if (err) {
-        console.log("Could connect to server"); 
+        console.log("Could connect to server");
     } else {
         console.log("Connected!");
     }
 });
 
 app.get('/',function(req,res) {
-  res.json({"error" : false, "message" : "Technical Assessment!"});
+  res.sendfile('index.html');
+});
+
+app.get('/api/projects',function(req,res) {
+  const projectsData = [
+        {"name": "Primary Project",
+          "start_date": "05/15/2012",
+          "end_date": "06/07/2012",
+          "est_cost": "1200000",
+          "proj_cost": "1400000"},
+        {"name": "Secondary Project",
+            "start_date": "05/15/2012",
+            "end_date": "06/07/2012",
+            "est_cost": "1200000",
+            "proj_cost": "1400000"},
+            {"name": "Tertiary Project",
+                "start_date": "05/15/2012",
+                "end_date": "06/07/2012",
+                "est_cost": "1200000",
+                "proj_cost": "1400000"},
+                {"name": "Quaternary Project",
+                    "start_date": "05/15/2012",
+                    "end_date": "06/07/2012",
+                    "est_cost": "1200000",
+                    "proj_cost": "1400000"}
+    ];
+  res.send(projectsData);
 });
 
 //As a teacher, I want to register one or more students to a specified teacher.

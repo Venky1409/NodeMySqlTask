@@ -82,5 +82,19 @@ describe("Technical Assessment unit test",function() {
       done();
     });
   });
- 
+
+  it("should retrieve a list of project data",function(done) {
+
+    // calling /projects api
+    server
+    .get("/api/projects")
+    .expect("Content-type",/json/)
+    .expect(200) // THis is HTTP response
+    .end(function(err,res){
+      // HTTP status should be 200
+      res.status.should.equal(200);
+      done();
+    });
+  });
+
 });
